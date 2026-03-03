@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const service = require('../services/users');
+const service = require('.././services/users');
 router.get('/:id', service.getById);
 router.put('/:id', service.add);
 router.patch('/:id', service.update);
