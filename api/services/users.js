@@ -24,14 +24,15 @@ exports.add = async (req, res, next) => {
 
     const temp = ({
         name        : req.body.name,
-        firstname   : render.body.firstname,
-        email       : render.body.email,
-        password    : render.body.password,
+        firstname   : req.body.firstname,
+        email       : req.body.email,
+        password    : req.body.password,
     });
 
+
+    
     try {
         let user = await User.create(temp);
-
         return res.status(201).json(user);
     }   catch (error) {
         return res.status(501).json(error);
@@ -61,7 +62,7 @@ exports.update = async (req, res, next) => {
             });
             
             await user.save();
-            return res.status(201).json(error);
+            return res.status(200).json(user);
         }
             return res.status(404).json('user_not_found');
     }   catch (error) {

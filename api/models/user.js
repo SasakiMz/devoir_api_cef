@@ -6,7 +6,7 @@ const User  = new Schema({
     name: {
         type    : String,
         trim    : true,
-        require : [true, 'le nom est requis'],
+        required : [true, 'le nom est requis'],
     },
     firstname: {
         type: String,
