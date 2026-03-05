@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 const userRoute = require('../routes/users');
 
@@ -11,8 +11,12 @@ router.get('/', async(req, res) => {
     status  : 200,
     message : 'Bienvenue sur l\'API'
   })
+    res.render('index', {
+    title: 'Accueil'
+  });
 });
 
 router.use('/users', userRoute);
+
 
 module.exports = router;
