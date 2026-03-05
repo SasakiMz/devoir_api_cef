@@ -8,10 +8,6 @@ const User  = new Schema({
         trim    : true,
         required : [true, 'le nom est requis'],
     },
-    firstname: {
-        type: String,
-        trim: true,
-    },
     email: {
         type    : String,
         true    : true,
@@ -27,12 +23,12 @@ const User  = new Schema({
     timestamps: true,
 });
 
-User.pre('save', function(next) {
+User.pre('save', async function() {
     if (!this.isModified('password')) {
-        return next();
+        return;
     }
-    this.password = bcrypt.hashSync(this.password, 10);
-    next();
+
+    this.password = await bcrypt.hash(this.password, 10);
 });
 
 module.exports = mongoose.model('User', User);

@@ -24,7 +24,6 @@ exports.add = async (req, res, next) => {
 
     const temp = ({
         name        : req.body.name,
-        firstname   : req.body.firstname,
         email       : req.body.email,
         password    : req.body.password,
     });
@@ -35,7 +34,7 @@ exports.add = async (req, res, next) => {
         let user = await User.create(temp);
         return res.status(201).json(user);
     }   catch (error) {
-        return res.status(501).json(error);
+        return res.status(500).json(error.message);
     }
 }
 
@@ -46,7 +45,6 @@ exports.update = async (req, res, next) => {
     const id = req.params.id
     const temp = ({
         name        :req.body.name,
-        firstname   :req.body.firstname,
         email       :req.body.email,
         password    :req.body.password,
     });
