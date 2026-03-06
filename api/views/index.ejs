@@ -1,11 +1,21 @@
-<form method="post" action="http://localhost:3000/files" enctype="multipart/form-data">
-    <fieldset>
-        <legend>Formulaire de test d'envoi d'image</legend><br>
-    <label for="upload_file">Choisissez un fichier</label>
-    <input type="file" name="upload_file"><br><br>
-    <label for="upload_file">Description de l'image</label>
-    <input type="text" name="description"><br><br>
-    <input type="text" name="userId" value="69a923f5d03ede4a15140554" hidden>
-    <input type="submit" value="submit">
-    </fieldset>
-</form>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port de plaisance Russell</title>
+</head>
+<body>
+    <h1>Port de plaissance Russel</h1>
+    <p>
+        Bonjour membre de la capitainerie !, avec cette application vous pourrez gérer les réservations ainsi que les catways de façon beaucoup plus simple !  
+    </p>
+    <h2>Espace de connexion du tableau de bord</h2>
+    <form action="/login" method="POST">
+        <label for=""><input type="email" name="email" required></label><br><br>
+        <label for=""><input type="password" name="password" required></label><br><br>
+        <button type="submit">Se connecter</button>
+    </form><br>
+    <a href="/documentation">Documentation de l'API</a><br><br>
+</body>
+</html>

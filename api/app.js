@@ -34,7 +34,6 @@ app.use('/', indexRouter);
 app.use('/catways', reservationsRoutes);
 app.use('/catways', catwaysRoutes);
 
-app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(function(req, res, next) {
