@@ -1,0 +1,16 @@
+const express = require('express');
+const router = express.Router();
+const service = require('../services/users');
+const private = require('../middlewares/private');
+
+
+
+router.get('/', private.checkJWT, service.getAllFiles);
+
+router.post('/', /*private.checkJWT,*/ service.createOneFile);
+
+router.get('/:id', private.checkJWT, service.getOneFile);
+
+router.put('/:id', private.checkJWT, service.modifyOneFile);
+
+router.delete('/delete', private.checkJWT, service.deleteOneFile);
