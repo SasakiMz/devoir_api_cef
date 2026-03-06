@@ -30,9 +30,6 @@ exports.add = async (req, res, next) => {
         email       : req.body.email,
         password    : req.body.password,
     });
-
-
-    
     try {
         let user = await User.create(temp);
         return res.status(201).json(user);
