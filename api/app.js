@@ -7,6 +7,7 @@ const cors  = require('cors');
 const indexRouter = require('./routes/index');
 const mongodb = require('./db/mongo.js');
 const reservationsRoutes = require('./routes/reservations');
+const catwaysRoutes = require('./routes/catways');
 const path = require('path');
 
 
@@ -36,8 +37,8 @@ app.set('view engine', 'ejs');
 app.use(function(req, res, next) {
     res.status(404).json({name: 'API', version: '1.0', status : 404, message: 'not_found'});
 });
+
 app.use('/catways', reservationsRoutes);
-
-
+app.use('/catways', catwaysRoutes);
 
 module.exports = app;
